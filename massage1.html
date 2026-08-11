@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Анна — вакуумно-роликовый массаж</title>
+<meta name="description" content="Вакуумно-роликовый массаж. Мастер Анна, опыт более 5 лет. Спина, шейно-воротниковая зона, антицеллюлитный, общий массаж. Запись по телефону +7 917 610-92-32.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1B1226;
+  --plum:#3E2857;
+  --violet:#6B4A8F;
+  --line:#8E6FB0;
+  --lav-deep:#A98BC7;
+  --lav:#C6B2D9;
+  --lav-soft:#E7DEF0;
+  --paper:#F7F3FB;
+  --white:#FFFFFF;
+
+  --wrap:1160px;
+  --r:22px;
+  --shadow:0 18px 44px -24px rgba(27,18,38,.45);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:17px;
+  line-height:1.65;
+  font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{margin:0;font-family:'Playfair Display',Georgia,serif;font-weight:600;line-height:1.08;letter-spacing:-.01em}
+p{margin:0}
+:focus-visible{outline:2px solid var(--violet);outline-offset:3px;border-radius:6px}
+
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 24px}
+.section{padding:104px 0}
+.eyebrow{
+  font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+  font-weight:600;color:var(--violet);margin-bottom:18px;
+  display:flex;align-items:center;gap:12px;
+}
+.eyebrow::after{content:"";height:1px;flex:1;max-width:120px;background:var(--lav-deep);opacity:.6}
+.h2{font-size:clamp(30px,4.6vw,50px)}
+.lead{margin-top:18px;max-width:56ch;color:var(--plum);font-weight:300;font-size:clamp(16px,1.6vw,19px)}
+
+/* ---------- header ---------- */
+.site-header{
+  position:sticky;top:0;z-index:60;
+  background:rgba(247,243,251,.86);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(142,111,176,.22);
+}
+.bar{display:flex;align-items:center;gap:28px;min-height:78px}
+.brand{display:flex;flex-direction:column;line-height:1.15;margin-right:auto}
+.brand b{font-family:'Playfair Display',serif;font-size:25px;font-weight:600;letter-spacing:.02em}
+.brand span{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--violet);font-weight:600}
+.nav{display:flex;gap:28px;font-size:14.5px;font-weight:500;color:var(--plum)}
+.nav a{position:relative;padding:4px 0}
+.nav a::after{
+  content:"";position:absolute;left:0;bottom:0;height:1.5px;width:100%;
+  background:var(--violet);transform:scaleX(0);transform-origin:right;
+  transition:transform .4s var(--ease);
+}
+.nav a:hover::after{transform:scaleX(1);transform-origin:left}
+.head-phone{
+  display:inline-flex;align-items:center;gap:9px;
+  background:var(--ink);color:var(--paper);
+  padding:12px 22px;border-radius:999px;
+  font-size:15px;font-weight:600;letter-spacing:.01em;white-space:nowrap;
+  transition:background .3s var(--ease),transform .3s var(--ease);
+}
+.head-phone:hover{background:var(--violet);transform:translateY(-2px)}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(168deg,var(--lav) 0%,#B9A2D0 58%,#A98BC7 100%);
+  color:var(--ink);
+  padding:clamp(64px,9vw,110px) 0 clamp(72px,9vw,116px);
+}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.8fr);gap:40px;align-items:center}
+.hero h1{
+  font-size:clamp(46px,9.4vw,104px);
+  line-height:.92;letter-spacing:-.02em;font-weight:700;
+}
+.hero h1 em{
+  display:block;font-style:normal;font-family:'Manrope',sans-serif;
+  font-size:clamp(13px,1.7vw,17px);font-weight:600;
+  letter-spacing:.34em;text-transform:uppercase;
+  margin-bottom:22px;color:var(--plum);
+}
+.hero h1 i{font-style:italic;font-weight:500}
+.hero-sub{
+  margin-top:26px;max-width:44ch;font-weight:300;
+  font-size:clamp(16px,1.9vw,20px);color:var(--plum);
+}
+.hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:10px;
+  padding:16px 32px;border-radius:999px;
+  font-weight:600;font-size:16px;border:1.5px solid var(--ink);
+  transition:transform .3s var(--ease),background .3s var(--ease),color .3s var(--ease);
+}
+.btn-solid{background:var(--ink);color:var(--paper)}
+.btn-solid:hover{background:var(--violet);border-color:var(--violet);transform:translateY(-3px)}
+.btn-ghost:hover{background:rgba(27,18,38,.08);transform:translateY(-3px)}
+.hero-meta{display:flex;flex-wrap:wrap;gap:34px;margin-top:46px;padding-top:26px;border-top:1px solid rgba(27,18,38,.18)}
+.hero-meta div b{display:block;font-family:'Playfair Display',serif;font-size:26px;font-weight:600}
+.hero-meta div span{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--plum);font-weight:600}
+
+/* single-line figure — signature element */
+.figure-wrap{display:flex;justify-content:center}
+.figure{width:min(100%,340px);height:auto;overflow:visible}
+.figure path{
+  fill:none;stroke:var(--violet);stroke-width:1.6;
+  stroke-linecap:round;stroke-linejoin:round;opacity:.85;
+}
+.figure path{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 3.4s var(--ease) forwards}
+.figure path:nth-child(2){animation-delay:.35s}
+.figure path:nth-child(3){animation-delay:.7s}
+.figure path:nth-child(4){animation-delay:1s}
+.figure path:nth-child(5){animation-delay:1.25s}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+/* ---------- services ---------- */
+.services{background:var(--paper)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:22px;margin-top:52px}
+.card{
+  position:relative;background:var(--white);
+  border:1px solid rgba(142,111,176,.2);
+  border-radius:var(--r);
+  padding:32px 30px 28px;
+  display:flex;flex-direction:column;
+  transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s var(--ease);
+}
+.card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--lav-deep)}
+.card h3{font-size:23px;padding-right:14px}
+.card .zones{margin-top:14px;color:var(--violet);font-weight:300;font-size:15.5px;line-height:1.55;flex:1}
+.card-foot{
+  display:flex;align-items:baseline;justify-content:space-between;gap:16px;
+  margin-top:26px;padding-top:18px;border-top:1px solid rgba(142,111,176,.24);
+}
+.time{font-size:14px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--plum)}
+.price{font-family:'Playfair Display',serif;font-size:27px;font-weight:600;white-space:nowrap}
+.price sup{font-family:'Manrope',sans-serif;font-size:12px;font-weight:600;letter-spacing:.08em;margin-left:4px;top:-.7em;position:relative;color:var(--violet)}
+
+/* ---------- price list ---------- */
+.pricelist{background:linear-gradient(180deg,#BFA9D5 0%,var(--lav) 100%)}
+.list{
+  margin-top:46px;background:rgba(247,243,251,.72);
+  border-radius:var(--r);padding:clamp(20px,3.4vw,40px);
+  border:1px solid rgba(255,255,255,.55);
+}
+.list-head,.row{
+  display:grid;grid-template-columns:minmax(0,1fr) 110px 110px;
+  gap:16px;align-items:baseline;
+}
+.list-head{
+  padding-bottom:14px;border-bottom:1.5px solid var(--violet);
+  font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--violet);
+}
+.list-head span:nth-child(2),.list-head span:nth-child(3),.row .r-time,.row .r-price{text-align:right}
+.row{padding:20px 0;border-bottom:1px solid rgba(142,111,176,.3)}
+.row:last-child{border-bottom:0}
+.row .r-name{font-family:'Playfair Display',serif;font-size:clamp(19px,2.2vw,23px);font-weight:600}
+.row .r-name small{display:block;font-family:'Manrope',sans-serif;font-size:14px;font-weight:300;color:var(--plum);margin-top:5px;line-height:1.5}
+.row .r-time{font-size:15px;font-weight:500;color:var(--plum);white-space:nowrap}
+.row .r-price{font-family:'Playfair Display',serif;font-size:clamp(19px,2.2vw,23px);font-weight:600;white-space:nowrap}
+.note{margin-top:24px;font-size:14px;color:var(--plum);font-weight:300}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(32px,6vw,80px);align-items:center}
+.portrait{
+  aspect-ratio:4/5;border-radius:var(--r);
+  background:linear-gradient(160deg,var(--lav-soft),var(--lav-deep));
+  display:grid;place-items:center;position:relative;overflow:hidden;
+}
+.portrait .figure{width:74%}
+.portrait .figure path{stroke:var(--paper);stroke-width:1.4;opacity:.95}
+.portrait .initial{
+  position:absolute;left:0;right:0;bottom:-.14em;text-align:center;
+  font-family:'Playfair Display',serif;font-size:clamp(120px,20vw,220px);
+  color:rgba(255,255,255,.4);line-height:1;pointer-events:none;
+}
+.facts{display:grid;gap:2px;margin-top:34px;background:rgba(142,111,176,.25);border-radius:16px;overflow:hidden}
+.fact{background:var(--paper);padding:20px 24px;display:flex;gap:18px;align-items:baseline}
+.fact b{font-family:'Playfair Display',serif;font-size:21px;min-width:72px}
+.fact span{font-size:15.5px;color:var(--plum);font-weight:300}
+
+/* ---------- contact ---------- */
+.contact{background:var(--ink);color:var(--paper)}
+.contact .eyebrow{color:var(--lav-deep)}
+.contact .eyebrow::after{background:rgba(201,178,217,.4)}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,.75fr);gap:clamp(32px,5vw,64px);align-items:center}
+.big-phone{
+  display:inline-block;margin-top:26px;
+  font-family:'Playfair Display',serif;font-weight:600;
+  font-size:clamp(34px,6.6vw,66px);letter-spacing:-.01em;
+  transition:color .3s var(--ease);
+}
+.big-phone:hover{color:var(--lav-deep)}
+.contact .lead{color:var(--lav-soft)}
+.contact .btn{border-color:var(--paper)}
+.contact .btn-solid{background:var(--paper);color:var(--ink)}
+.contact .btn-solid:hover{background:var(--lav-deep);border-color:var(--lav-deep);color:var(--ink)}
+.contact .btn-ghost{color:var(--paper)}
+.contact .btn-ghost:hover{background:rgba(247,243,251,.12)}
+.qr-card{
+  background:var(--paper);color:var(--ink);border-radius:var(--r);
+  padding:28px;text-align:center;box-shadow:var(--shadow);
+}
+.qr-card svg{width:100%;max-width:220px;margin:0 auto;height:auto}
+.qr-card b{display:block;margin-top:18px;font-size:16px;font-weight:600}
+.qr-card small{display:block;margin-top:6px;font-size:13px;color:var(--violet);font-weight:400}
+
+/* ---------- footer ---------- */
+.site-footer{background:var(--ink);color:var(--lav-deep);border-top:1px solid rgba(201,178,217,.2)}
+.foot{display:flex;flex-wrap:wrap;gap:14px 28px;justify-content:space-between;align-items:center;padding:30px 0;font-size:13.5px}
+.site-footer a:hover{color:var(--paper)}
+
+/* ---------- to top ---------- */
+.to-top{
+  position:fixed;right:22px;bottom:22px;z-index:70;
+  width:52px;height:52px;border-radius:50%;
+  border:1px solid rgba(142,111,176,.4);
+  background:var(--ink);color:var(--paper);
+  display:grid;place-items:center;cursor:pointer;
+  font-size:19px;line-height:1;
+  opacity:0;visibility:hidden;transform:translateY(14px);
+  transition:opacity .35s var(--ease),transform .35s var(--ease),visibility .35s,background .3s;
+}
+.to-top.on{opacity:1;visibility:visible;transform:none}
+.to-top:hover{background:var(--violet)}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- responsive ---------- */
+@media (max-width:960px){
+  .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}
+  .figure-wrap{order:-1}
+  .figure{width:min(62%,260px)}
+  .portrait{max-width:420px}
+}
+@media (max-width:840px){
+  .nav{
+    display:flex;gap:22px;order:3;width:100%;
+    overflow-x:auto;padding:0 0 12px;
+    scrollbar-width:none;-webkit-overflow-scrolling:touch;
+  }
+  .nav::-webkit-scrollbar{display:none}
+  .nav a{white-space:nowrap}
+  .bar{flex-wrap:wrap;padding-top:14px;min-height:0;gap:14px}
+  .brand b{font-size:21px}
+  .head-phone{padding:10px 18px;font-size:14px}
+}
+@media (max-width:640px){
+  body{font-size:16px}
+  .section{padding:72px 0}
+  .wrap{padding:0 18px}
+  .cards{grid-template-columns:1fr;gap:16px}
+  .card{padding:26px 22px 24px}
+  .list-head{display:none}
+  .row{grid-template-columns:1fr auto;gap:6px 16px;padding:18px 0}
+  .row .r-name{grid-column:1 / -1}
+  .row .r-time{text-align:left;order:2}
+  .row .r-price{order:3}
+  .btn{flex:1;padding:15px 22px}
+  .hero-meta{gap:24px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important}
+  .reveal{opacity:1;transform:none}
+  .figure path{stroke-dashoffset:0}
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="#top">
+      <b>Анна</b>
+      <span>вакуумно-роликовый массаж</span>
+    </a>
+    <nav class="nav" aria-label="Разделы страницы">
+      <a href="#services">Услуги</a>
+      <a href="#price">Прайс</a>
+      <a href="#about">О мастере</a>
+      <a href="#contact">Запись</a>
+    </nav>
+    <a class="head-phone" href="tel:+79176109232">☎ +7 917 610-92-32</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <h1><em>Мастер Анна</em>Тело<br><i>помнит</i> заботу</h1>
+        <p class="hero-sub">Вакуумно-роликовый массаж: снимает зажимы в спине и шее, работает с плотностью тканей и отёчностью. Сеанс от 30 до 80 минут — по вашей зоне и задаче.</p>
+        <div class="hero-actions">
+          <a class="btn btn-solid" href="tel:+79176109232">Записаться по телефону</a>
+          <a class="btn btn-ghost" href="#price">Смотреть прайс</a>
+        </div>
+        <div class="hero-meta">
+          <div><b>9</b><span>программ</span></div>
+          <div><b>5+ лет</b><span>опыта</span></div>
+          <div><b>30–80</b><span>минут сеанс</span></div>
+        </div>
+      </div>
+      <div class="figure-wrap">
+        <svg class="figure" viewBox="0 0 320 540" role="img" aria-label="Силуэт фигуры, нарисованный одной линией">
+          <path pathLength="1" d="M196 96C236 74 246 34 210 22C178 12 152 42 158 74C163 100 190 112 206 96"/>
+          <path pathLength="1" d="M176 118C150 128 128 150 122 182C116 214 132 236 128 268C124 300 106 330 112 366C118 402 140 424 138 462C137 486 130 506 122 522"/>
+          <path pathLength="1" d="M188 130C214 142 236 168 240 200C244 232 226 254 206 268C186 282 176 300 178 324"/>
+          <path pathLength="1" d="M128 268C152 288 182 292 206 268"/>
+          <path pathLength="1" d="M186 302C200 338 210 374 206 414C203 446 196 478 202 512"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section services" id="services">
+    <div class="wrap">
+      <p class="eyebrow reveal">Виды массажа</p>
+      <h2 class="h2 reveal">Девять программ<br>под разные задачи</h2>
+      <p class="lead reveal">Каждая карточка — это зоны проработки, длительность и стоимость сеанса. Если сомневаетесь, что подойдёт именно вам, позвоните: Анна подскажет по вашему запросу.</p>
+
+      <div class="cards">
+        <article class="card reveal">
+          <h3>Массаж спины</h3>
+          <p class="zones">Шейно-воротниковый отдел, лопатки, поясничный отдел</p>
+          <div class="card-foot"><span class="time">40 мин</span><span class="price">1200<sup>₽</sup></span></div>
+        </article>
+
+        <article class="card reveal">
+          <h3>Шейно-воротниковая зона</h3>
+          <p class="zones">Шейный отдел, воротниковый отдел, лопатки</p>
+          <div class="card-foot"><span class="time">30 мин</span><span class="price">900<sup>₽</sup></span></div>
+        </article>
+
+        <article class="card reveal">
+          <h3>Антицеллюлитный</h3>
+          <p class="zones">Живот, ягодицы, пояснично-боковой отдел, бёдра до колена</p>
+          <div class="card-foot"><span class="time">50–60 мин</span><span class="price">1200<sup>₽</sup></span></div>
+        </article>
+
+        <article class="card reveal">
+          <h3>Комплексный</h3>
+          <p class="zones">Антицеллюлитный массаж + шейно-воротниковая зона</p>
+          <div class="card-foot"><span class="time">70–80 мин</span><span class="price">2000<sup>₽</sup></span></div>
+        </article>
+
+        <article class="card reveal">
+          <h3>Общий массаж</h3>
+          <p class="zones">Всё тело: спина + руки + ноги</p>
+          <div class="card-foot"><span class="time">60–80 мин</span><span class="price">1800<sup>₽</sup></span></div>
+        </article>
+
+        <article class="card reveal">
+          <h3>Массаж лица</h3>
+          <p class="zones">Мягкая работа с овалом лица и лимфодренаж</p>
+          <div class="card-foot"><span class="time">30 мин</span><span class="price">800<sup>₽</sup></span></div>
+        </article>
+
+        <article class="card reveal">
+          <h3>Массаж рук</h3>
+          <p class="zones">Кисти, предплечья, плечи</p>
+          <div class="card-foot"><span class="time">20 мин</span><span class="price">700<sup>₽</sup></span></div>
+        </article>
+
+        <article class="card reveal">
+          <h3>Массаж ног</h3>
+          <p class="zones">Бёдра, голени, проработка отёчности</p>
+          <div class="card-foot"><span class="time">30 мин</span><span class="price">800<sup>₽</sup></span></div>
+        </article>
+
+        <article class="card reveal">
+          <h3>Массаж стоп</h3>
+          <p class="zones">Стопы и голеностоп, снятие усталости</p>
+          <div class="card-foot"><span class="time">30 мин</span><span class="price">800<sup>₽</sup></span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICE -->
+  <section class="section pricelist" id="price">
+    <div class="wrap">
+      <p class="eyebrow reveal">Прайс</p>
+      <h2 class="h2 reveal">Продолжительность<br>и стоимость сеанса</h2>
+      <p class="lead reveal">Диапазон времени зависит от зоны и её состояния — точную длительность мастер определяет на сеансе.</p>
+
+      <div class="list reveal">
+        <div class="list-head"><span>Вид массажа</span><span>Время</span><span>Цена</span></div>
+
+        <div class="row">
+          <div class="r-name">Массаж спины<small>Шейно-воротниковый отдел, лопатки, поясничный отдел</small></div>
+          <div class="r-time">40 мин</div><div class="r-price">1200 ₽</div>
+        </div>
+        <div class="row">
+          <div class="r-name">Массаж шейно-воротниковой зоны<small>Шейный отдел, воротниковый отдел, лопатки</small></div>
+          <div class="r-time">30 мин</div><div class="r-price">900 ₽</div>
+        </div>
+        <div class="row">
+          <div class="r-name">Массаж антицеллюлитный<small>Живот, ягодицы, пояснично-боковой отдел, бёдра до колена</small></div>
+          <div class="r-time">50–60 мин</div><div class="r-price">1200 ₽</div>
+        </div>
+        <div class="row">
+          <div class="r-name">Массаж комплексный<small>Антицеллюлитный + шейно-воротниковая зона</small></div>
+          <div class="r-time">70–80 мин</div><div class="r-price">2000 ₽</div>
+        </div>
+        <div class="row">
+          <div class="r-name">Массаж общий<small>Всего тела: спина + руки + ноги</small></div>
+          <div class="r-time">60–80 мин</div><div class="r-price">1800 ₽</div>
+        </div>
+        <div class="row"><div class="r-name">Массаж лица</div><div class="r-time">30 мин</div><div class="r-price">800 ₽</div></div>
+        <div class="row"><div class="r-name">Массаж рук</div><div class="r-time">20 мин</div><div class="r-price">700 ₽</div></div>
+        <div class="row"><div class="r-name">Массаж ног</div><div class="r-time">30 мин</div><div class="r-price">800 ₽</div></div>
+        <div class="row"><div class="r-name">Массаж стоп</div><div class="r-time">30 мин</div><div class="r-price">800 ₽</div></div>
+
+        <p class="note">Запись осуществляется по телефону <a href="tel:+79176109232"><b>+7 917 610-92-32</b></a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="wrap about-grid">
+      <div class="portrait reveal">
+        <svg class="figure" viewBox="0 0 320 540" role="img" aria-label="Силуэт фигуры, нарисованный одной линией">
+          <path pathLength="1" d="M196 96C236 74 246 34 210 22C178 12 152 42 158 74C163 100 190 112 206 96"/>
+          <path pathLength="1" d="M176 118C150 128 128 150 122 182C116 214 132 236 128 268C124 300 106 330 112 366C118 402 140 424 138 462C137 486 130 506 122 522"/>
+          <path pathLength="1" d="M188 130C214 142 236 168 240 200C244 232 226 254 206 268C186 282 176 300 178 324"/>
+          <path pathLength="1" d="M128 268C152 288 182 292 206 268"/>
+          <path pathLength="1" d="M186 302C200 338 210 374 206 414C203 446 196 478 202 512"/>
+        </svg>
+        <span class="initial" aria-hidden="true">А</span>
+      </div>
+      <div>
+        <p class="eyebrow reveal">О мастере</p>
+        <h2 class="h2 reveal">Анна</h2>
+        <p class="lead reveal">Работаю с вакуумно-роликовым массажем более пяти лет. Веду сеанс спокойно и без спешки: сначала слушаю запрос — что тянет, где болит, что беспокоит в фигуре, — и только потом подбираю программу и интенсивность.</p>
+        <div class="facts reveal">
+          <div class="fact"><b>5+ лет</b><span>практики вакуумно-роликового массажа</span></div>
+          <div class="fact"><b>9 программ</b><span>от локальной зоны до массажа всего тела</span></div>
+          <div class="fact"><b>30–80 мин</b><span>длительность одного сеанса</span></div>
+          <div class="fact"><b>Запись</b><span>по телефону, время согласуем заранее</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="wrap contact-grid">
+      <div>
+        <p class="eyebrow reveal">Запись</p>
+        <h2 class="h2 reveal">Позвоните — подберём<br>время и программу</h2>
+        <a class="big-phone reveal" href="tel:+79176109232">+7 917 610-92-32</a>
+        <p class="lead reveal">Скажите, какая зона беспокоит, и Анна предложит подходящий вариант сеанса. Отсканируйте QR-код, чтобы посмотреть отзывы и новости в группе ВКонтакте.</p>
+        <div class="hero-actions reveal">
+          <a class="btn btn-solid" href="tel:+79176109232">Записаться</a>
+          <a class="btn btn-ghost" href="#services">Выбрать массаж</a>
+        </div>
+      </div>
+      <div class="qr-card reveal">
+        <svg id="qr" viewBox="0 0 29 29" role="img" aria-label="QR-код на группу ВКонтакте"></svg>
+        <b>QR-код на группу ВК</b>
+        <small>Заглушка — замените на настоящий код</small>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap foot">
+    <span>© <span id="year">2026</span> Анна — вакуумно-роликовый массаж</span>
+    <a href="tel:+79176109232">+7 917 610-92-32</a>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="Наверх">↑</button>
+
+<script>
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* Плавное появление блоков при скролле */
+  var items = document.querySelectorAll('.reveal');
+  if (reduce || !('IntersectionObserver' in window)) {
+    items.forEach(function(el){ el.classList.add('in'); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        var group = e.target.parentElement ? Array.prototype.indexOf.call(e.target.parentElement.children, e.target) : 0;
+        e.target.style.transitionDelay = Math.min(group, 6) * 70 + 'ms';
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px' });
+    items.forEach(function(el){ io.observe(el); });
+  }
+
+  /* Кнопка «Наверх» */
+  var top = document.getElementById('toTop');
+  var onScroll = function(){ top.classList.toggle('on', window.scrollY > 600); };
+  window.addEventListener('scroll', onScroll, { passive:true });
+  onScroll();
+  top.addEventListener('click', function(){
+    window.scrollTo({ top:0, behavior: reduce ? 'auto' : 'smooth' });
+  });
+
+  /* Заглушка QR-кода: детерминированный узор + метки позиционирования */
+  var qr = document.getElementById('qr'), N = 29, ns = 'http://www.w3.org/2000/svg';
+  var bg = document.createElementNS(ns,'rect');
+  bg.setAttribute('width', N); bg.setAttribute('height', N); bg.setAttribute('fill','#F7F3FB');
+  qr.appendChild(bg);
+  var inFinder = function(x,y){
+    return (x<9 && y<9) || (x>N-10 && y<9) || (x<9 && y>N-10);
+  };
+  for (var y=0; y<N; y++){
+    for (var x=0; x<N; x++){
+      if (inFinder(x,y)) continue;
+      if (((x*7 + y*13 + (x*y)%5) % 3) !== 0) continue;
+      var r = document.createElementNS(ns,'rect');
+      r.setAttribute('x',x); r.setAttribute('y',y);
+      r.setAttribute('width',1); r.setAttribute('height',1);
+      r.setAttribute('fill','#1B1226');
+      qr.appendChild(r);
+    }
+  }
+  [[0,0],[N-7,0],[0,N-7]].forEach(function(p){
+    [[0,0,7,'#1B1226'],[1,1,5,'#F7F3FB'],[2,2,3,'#1B1226']].forEach(function(s){
+      var r = document.createElementNS(ns,'rect');
+      r.setAttribute('x', p[0]+s[0]); r.setAttribute('y', p[1]+s[1]);
+      r.setAttribute('width', s[2]); r.setAttribute('height', s[2]);
+      r.setAttribute('fill', s[3]);
+      qr.appendChild(r);
+    });
+  });
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+})();
+</script>
+</body>
+</html>
